@@ -25,7 +25,7 @@ namespace Tarea_4
             double bGrados = double.Parse(Console.ReadLine());
 
             // calculo de valores
-            double f = 180 - 90 - dGrados;
+            double f = 180 - 90 - dGrados;  //f= a+b
             double a = f-bGrados;
             double c = 90 - a;
 
