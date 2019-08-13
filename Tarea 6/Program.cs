@@ -47,6 +47,7 @@ namespace ConsoleApp2
                     {
                         Console.WriteLine("Gracias por participar");
                         Console.WriteLine("Tu total es: " + Puntos);
+                        break;
                     }
 
                     if (continuar == "s")
