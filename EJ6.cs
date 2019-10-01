@@ -15,8 +15,10 @@ public class EJ6 : MonoBehaviour
 
     void Update()
     {
+    if (t >= 10){
         float y = -0.5f * (w * t) + 0.5f;
         t += Time.deltaTime;
         mLight.intensity = y;      
+        }
     }
 }
