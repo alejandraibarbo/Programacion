@@ -19,10 +19,12 @@ public class Motor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float magFuerza = 50;
-        float sentido = 1;
-        Vector3 dir = transform.forward;
-        Vector3 fuerza = magFuerza * dir * sentido;
+        
+        Vector3 direccionv = transform.forward;
+        float sentido = Input.GetAxis("Vertical");
+        Vector3 velocidad = magnitud * direccionv * sentido;
+        Vector3 distancia = velocidad * Time.deltaTime;
+        transform.position = transform.position + distancia;
 
         Vector3 direccion = transform.forward * Input.GetAxis("Vertical");
         Vector3 velocidad = magnitud * (direccion);
@@ -33,10 +35,18 @@ public class Motor : MonoBehaviour
         Vector3 velAng = magnitudAng * direccionA;
         Vector3 distAng = velAng * Time.deltaTime;
         transform.eulerAngles += distAng;
-        if (Input.GetKeyDown(KeyCode.Space))
+       
+
+            if (Input.GetButtonDown("Jump"))
+
         {
-            mrgbdy.AddForce(fuerza);
+
+            rb2d.AddForce(dashh);
+
+            rb2d.AddForce(dashv);
+
         }
+        
 
         if(velocidad.magnitude>1|| velAng.magnitude > 1)
         {
